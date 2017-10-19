@@ -20,9 +20,6 @@ bower install vue
 
 En téléchargeant les fichiers depuis le [Site officiel VUEJS](https://vuejs.org/) ou en utilisant un CDN <https://unpkg.com/vue> ou <https://cdn.jsdelivr.net/npm/vue>.
 
-## Note sur la version Runtime only
-
-TODO
 
 ## Premiers pas
 
@@ -61,26 +58,17 @@ Dans l'exemple précédent, le *template* est directement défini dans l'éléme
 On peut égalament difinir le template avec la clef `template` de l'instance de **VueJS** :
 
 ```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Hello World avec VUEJS</title>
-</head>
-<body>
   <div id="application"><div>
-  <script src="https://unpkg.com/vue"></script>
-  <script>
-  new Vue({
-    el: "#application",
-    template: `<h1>{{ message }}</h1>`,
-    data: {
-      message: "Bonjour monde !"
-    }
-  })
-  </script>
-</body>
-</html>
+```
+
+```js
+new Vue({
+ el: "#application",
+ template: `<h1>{{ message }}</h1>`,
+ data: {
+   message: "Bonjour monde !"
+ }
+})
 ```
 
 # Mise en pratique
