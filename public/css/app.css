@@ -1,5 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway|Roboto");
+@import url("https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/knacss.css");
 body {
-  font-family: "Open Sans" Arial sans-serif;
-  font-size: 16px; }
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 16px;
+  color: #3B7080;
+  background: #fff;
+  margin: 0;
+  padding: 0; }
 
-/*# sourceMappingURL=app.css.map */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', Arial, sans-serif; }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto; }
+
+.wrapper {
+  margin: 0;
+  padding: 0; }
+  .wrapper.blue {
+    background: #3B7080;
+    color: white;
+    text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
+
+.article-header {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .article-header h1, .article-header h2, .article-header h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+  .article-header .title {
+    font-size: 4em; }
+  .article-header .author {
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.5); }
+
+.article-footer {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.article .level1 h1 {
+  font-size: 3em; }
+
+.article .level2 h1 {
+  font-size: 1.6em; }
+
+pre {
+  border-left: 4px #CCC solid;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  background: white; }
+  pre .hljs {
+    background: white; }

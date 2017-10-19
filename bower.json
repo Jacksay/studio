@@ -1,0 +1,23 @@
+{
+  "name": "studio",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Jacksay/studio",
+  "authors": [
+    "Stephane Bouvry <stephane.bouvry@unicaen.fr>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~3.5.0",
+    "highlight-js": "~9.12.0",
+    "jquery": "~3.2.1"
+  }
+}
