@@ -58,3 +58,12 @@ typings/
 .env
 
 .sass-cache
+
+public/articles/*
+!public/articles/.gitkeep
+
+public/libs/*
+!public/libs/.gitkeep
+
+public/slides/*
+!public/slides/.gitkeep

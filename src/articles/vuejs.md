@@ -18,11 +18,15 @@ En utilisant [Bower](https://bower.io/) :
 bower install vue
 ```
 
-En téléchargeant les fichiers depuis le [Site officiel VUEJS](https://vuejs.org/) ou en utilisant un CDN <https://unpkg.com/vue>
+En téléchargeant les fichiers depuis le [Site officiel VUEJS](https://vuejs.org/) ou en utilisant un CDN <https://unpkg.com/vue> ou <https://cdn.jsdelivr.net/npm/vue>.
 
+## Note sur la version Runtime only
 
+TODO
 
 ## Premiers pas
+
+L'intégration peut se faire en utilisant la balise `<script>` :
 
 ```html
 <!DOCTYPE html>
@@ -48,9 +52,11 @@ En téléchargeant les fichiers depuis le [Site officiel VUEJS](https://vuejs.or
 </html>
 ```
 
+> L'utilitaire en ligne de commande **vue-cli** permet d'automatiser l'intégration d'une application *standalone*.
+
 # Template
 
-Dans l'exemple précédent, le template est directement défini dans l'élément cible `#application`.
+Dans l'exemple précédent, le *template* est directement défini dans l'élément cible `#application`.
 
 On peut égalament difinir le template avec la clef `template` de l'instance de **VueJS** :
 
