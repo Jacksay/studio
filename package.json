@@ -18,12 +18,13 @@
   "homepage": "https://github.com/Jacksay/studio#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "gulp": "^3.9.1",
-    "gulp-shell": "^0.6.3",
     "highlight.js": "^9.12.0",
-    "marked": "^0.3.6"
+    "marked": "^0.3.6",
+    "reveal.js": "^3.5.0"
   },
   "devDependencies": {
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.3"
   }
 }
