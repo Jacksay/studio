@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
 @import url('https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/knacss.css');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+
+$color-main: #3B7080;
 
 body {
-  font-family: "Raleway", Arial, sans-serif;
-  font-size: 16px;
-  color: #3B7080;
+  font-family: "Droid Serif", Times, serif;
+  font-size: 20px;
+  color: #555;
   background: #fff;
   margin: 0;
   padding: 0;
@@ -12,7 +15,14 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', Arial, sans-serif;
+  color: $color-main;
 }
+
+strong, em, code {
+  color: $color-main;
+}
+
+
 
 .container {
   max-width: 960px;
@@ -29,12 +39,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.article-header {
+header {
   height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  h1, h2, h3 { margin: 0; padding: 0; text-align: center;}
+  h1, h2, h3 { margin: 0; padding: 0; text-align: center; color: white}
   .title { font-size: 4em;}
   .author { font-weight: 100; color: rgba(255,255,255,.5); }
   .centered {
