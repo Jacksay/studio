@@ -59,6 +59,8 @@ typings/
 
 .sass-cache
 
+public/*.html
+
 public/articles/*
 !public/articles/.gitkeep
 

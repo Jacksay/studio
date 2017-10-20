@@ -32,8 +32,16 @@ gulp.task('compile:sass', function(){
     .pipe(gulp.dest('public/css/'));
 })
 
+gulp.task('html', function(){
+  console.log('Copie du home');
+  gulp.src('src/*.html')
+    .pipe(gulp.dest('public/'));
+})
 
-gulp.task('watch', ['compile:article', 'compile:slide', 'compile:sass'],function(){
+gulp.task('default', ['html', 'compile:article', 'compile:slide', 'compile:sass', 'watch']);
+
+gulp.task('watch', function(){
+   gulp.watch(['src/*.html'], ['html']);
   gulp.watch(['public/css/*.scss'], ['compile:sass']);
   gulp.watch(['src/slides/*.md','src/templates/revealjs.html'], ['compile:slide']);
   gulp.watch(['src/articles/*.md','src/templates/article.html'], ['compile:article']);

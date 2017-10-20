@@ -51,6 +51,66 @@ L'intégration peut se faire en utilisant la balise `<script>` :
 
 > L'utilitaire en ligne de commande **vue-cli** permet d'automatiser l'intégration d'une application *standalone*.
 
+# Accès aux données
+
+## La clef data
+L'accès aux données se fait via l'**instance de Vue** que l'on cré en invoquant `new Vue(...)`. Les données gérées par la vue sont référencées dans la clef `data`:
+
+```html
+<!-- le template -->
+<div id="application">
+   <article>
+      <h1>{{ titre }}</h1>
+      <p>{{ description }}</p>
+   </article>
+</div>   
+```
+
+```js
+let instance = new Vue({
+   el: "#application",
+   // Données de la vue
+   data: {
+      titre: "Mon titre",
+      description: "Ma description"
+   }
+})
+```
+
+Lors de l'instanciation de l'instance de Vue, toutes les valeurs placées dans `data` vont être rendu **réactives**, ainsi, dès qu'un accès les modifie, le processus de rendu se déclenche.
+
+><i>TEST</i>Si vous ne déclarez pas un champ dans `data` avant de l'utiliser, Vue émettra un *warning* dans la console.
+
+Vous pouvez également accèder à une propriété réactive *depuis l'extérieur*.
+
+```js
+// Déclenche le rendu
+instance.titre = "Nouvelle valeur";
+```
+
+## Objet data
+
+Rien n'impose de gérer les données directement dans l'instance de Vue. Les données peuvent être gérées dans une objet séparé, dans ce cas, le système réactif de vue fonctionnera de la même façon.
+
+```js
+// La variable "donnees" sera réactive
+let donnees = {
+   titre: "Titre",
+   description: "Descrition"
+};
+
+let instance = new Vue({
+   data: donnees,
+   el: "#application"
+})
+
+// Actualise le rendu
+donnees.titre = "Nouveau titre";
+```
+
+# Cycle de vie
+
+
 # Template
 
 Dans l'exemple précédent, le *template* est directement défini dans l'élément cible `#application`.
