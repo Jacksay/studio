@@ -141,9 +141,12 @@ let vue = new Vue({
 
 # Template
 
-Dans l'exemple précédent, le *template* est directement défini dans l'élément cible `#application`.
+## la clef template
 
-On peut également définir le template avec la clef `template` de l'instance de **VueJS** :
+
+Dans l'exemple précédent, le *template* est directement défini dans l'élément cible `#application`. Ce choix, même si il fonctionne parfaitement n'est pas idéal car le contenu de ce template peut être visibel *en l'état* si l'instance de vue met du temps à être montée.
+
+Un alternative consite à utiliser une clef `template` directement dans l'instance **VueJS** :
 
 ```html
 <!-- La partie HTML deviens une simple cible -->
@@ -160,5 +163,50 @@ new Vue({
  }
 })
 ```
+
+<div class="info">
+les templates définit dans des chaînes de caractère vont être compliés par VueJS en code Javascript *à la volée*. Il est également possible de produire le code Javascript à la main avec la méthode `render()`
+</div>
+
+## render
+
+La méthode `render(ce)` est une alternative à la clef `template` qui permet d'écrire soit même la méthode de rendu.
+
+```js
+new Vue({
+ el: "#application",
+ render: function( createElement ){
+   return createElement('h'+this.niveau, this.message);
+ },
+ data: {
+   niveau: 1,
+   message: "Bonjour monde !"
+ }
+})
+```
+
+Dans certains cas (comme dans l'exemple ci-dessus), la méthode `render()` est plus économe à mettre en place.
+
+## Vue.compile()
+
+En interne, les *template* qui se présentent sous la forme de chaînes sont compilés avec la méthode `compile(str)` de la classe `Vue` :
+
+```js
+
+new Vue({
+ el: "#application",
+ render: Vue.compile('<h1>{{ message}}</h1>').render,
+ data: {
+   message: "Bonjour monde !"
+ }
+})
+```
+
+Les mécanismes de type [server side renderer](https://fr.vuejs.org/v2/guide/ssr.html) s'appuient sur ce principe. Si les performances de l'application sont centrale, ces fonctionnalités sont à utiliser dès le début du projet pour éviter d'avoir à faire une migration longue est laborieuse.
+
+<div class="info">
+C'est la méthode utilisée par les composants précopilé de l'utilitaire **vue-cli** (basé sur **Webpack**).
+</div>
+
 
 # Mise en pratique

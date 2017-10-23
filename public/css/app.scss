@@ -23,6 +23,25 @@ strong, em, code {
 }
 
 
+blockquote {
+  margin: 1em 0;
+  padding: .5em 1em 1em 2em;
+  background: lighten($color-main, 50%);
+}
+
+.info {
+  margin: 1em 0;
+  padding: 1em 1em 1em 2em;
+  background: lighten(#000, 80%);
+  border-radius: .5em;
+  &:before {
+    content: "info";
+  }
+}
+.info { background: lighten(#0A64A4, 50%); }
+.warn { background: lighten(#FF9000, 50%); }
+.note { background: lighten(#C0F400, 50%); }
+
 
 .container {
   max-width: 960px;
