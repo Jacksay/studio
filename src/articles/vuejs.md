@@ -6,19 +6,21 @@
 
 ## Installation
 
-A l'image d'autres outils *Javascript*, on peut installer **VueJS** de différentes façon.
+L'installation de **VUEJS** se fait de façon classique :
 
 En utilisant NPM :
 ```bash
 npm install vue
 ```
 
-En utilisant [Bower](https://bower.io/) :
+En utilisant le gestionnaire de dépendances [Bower](https://bower.io/) :
 ```bash
 bower install vue
 ```
 
-En téléchargeant les fichiers depuis le [Site officiel VUEJS](https://vuejs.org/) ou en utilisant un CDN <https://unpkg.com/vue> ou <https://cdn.jsdelivr.net/npm/vue>.
+En téléchargeant les fichiers depuis le [Site officiel VUEJS](https://vuejs.org/)
+
+Ou en utilisant un CDN <https://unpkg.com/vue> ou <https://cdn.jsdelivr.net/npm/vue>.
 
 
 ## Premiers pas
@@ -108,6 +110,32 @@ let instance = new Vue({
 donnees.titre = "Nouveau titre";
 ```
 
+## Instance de données
+
+On peut également utiliser un objet instancié si l'on souhaite gérer plus finement les données de l'application :
+
+```js
+// Classe pour gérer les données
+class AppData {
+   constructor(){
+      this.titre = "Titre";
+      this.descrition = "Description";
+   }
+   get extra(){
+      return "Extra " + this.titre;
+   }
+}
+
+// Instance des données
+const donnees = new AppData();
+
+// Vue
+let vue = new Vue({
+   data: donnees,
+   el: "#application"
+})
+```
+
 # Cycle de vie
 
 
@@ -115,15 +143,17 @@ donnees.titre = "Nouveau titre";
 
 Dans l'exemple précédent, le *template* est directement défini dans l'élément cible `#application`.
 
-On peut égalament difinir le template avec la clef `template` de l'instance de **VueJS** :
+On peut également définir le template avec la clef `template` de l'instance de **VueJS** :
 
 ```html
-  <div id="application"><div>
+<!-- La partie HTML deviens une simple cible -->
+<div id="application"><div>
 ```
 
 ```js
 new Vue({
  el: "#application",
+ // Le template est définit ici
  template: `<h1>{{ message }}</h1>`,
  data: {
    message: "Bonjour monde !"
