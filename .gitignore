@@ -69,3 +69,5 @@ public/libs/*
 
 public/slides/*
 !public/slides/.gitkeep
+
+demo
