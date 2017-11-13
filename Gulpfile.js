@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     shell = require('gulp-shell'),
-    sass = require('gulp-sass')
+    sass = require('gulp-sass'),
+    nodemon = require('gulp-nodemon')
     ;
 
 gulp.task('compile:slide', function(){
@@ -38,10 +39,18 @@ gulp.task('html', function(){
     .pipe(gulp.dest('public/'));
 })
 
+gulp.task('nodemon', function(){
+  nodemon({
+    script: 'index.js',
+    ext: 'js html css',
+    env: { 'NODE_ENV': 'development' }
+  })
+})
+
 gulp.task('default', ['html', 'compile:article', 'compile:slide', 'compile:sass', 'watch']);
 
-gulp.task('watch', function(){
-   gulp.watch(['src/*.html'], ['html']);
+gulp.task('watch', ['nodemon'], function(){
+  gulp.watch(['src/*.html'], ['html']);
   gulp.watch(['public/css/*.scss'], ['compile:sass']);
   gulp.watch(['src/slides/*.md','src/templates/revealjs.html'], ['compile:slide']);
   gulp.watch(['src/articles/*.md','src/templates/article.html'], ['compile:article']);
