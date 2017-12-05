@@ -2,15 +2,23 @@
 % VueJS 2.0
 % Stéphane Bouvry, 2018
 
-# Présentation
+# Intro {data-background="#ff9900"}
 
-## Framework JS
+# Framework Javascript {data-background="/images/user-experience.png"}
 
-Derrière l'appelation raccoleuse **web 2.0** ne se cache pas une *révolution* technique, mais plutôt une évolution des usages du web côté client, avec un soin apporté à l'**expérience utilisateur** (UX).
+## Story time
 
-D'abord artisanale, ce soucis de l'ergonomie a donné lieu à l'émergence d'outils dédié à la production d'interface riches.
+Derrière l'appelation raccoleuse **web 2.0** ne se cache pas une *révolution* technique, mais plutôt une évolution des usages du web côté client, nourri par l'**expérience utilisateur** (UX).
 
-Le but de ces outils étant de simplifier la développement d'interface, d'amméliorer la maintenabilité et l'évolution des applications en y introduisant des concepts éprouvés (MVC).
+---
+
+Tirant son inspiration d'anciennes pratiques artisanales, des outils de production sont apparus, syntétisant les usages (fonctionnalités, compatibilité) dans des frameworks dédié à la production d'interface riches.
+
+Parmis ces précurseurs () : **Backbone**, **Knockout**, **Ember**, **Angular**
+
+---
+
+Les frameworks ont pour but de simplifier la développement d'interface, d'amméliorer la maintenabilité et l'évolution des applications en y introduisant des concepts éprouvés (MVC, Injection de dépendance, Proxy, etc...).
 
 ## Exemple
 
